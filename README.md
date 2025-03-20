@@ -1,4 +1,8 @@
-# Provable-Defense-against-Privacy-Leakage-in-Federated-Learning-from-Representation-Perspective
+# Reproduction of Soteria
+The repo is a reproduction of Soteria w/ additional ideas.
+(The original repo is [here](https://github.com/jeremy313/Soteria?tab=readme-ov-file).)
+
+## Provable-Defense-against-Privacy-Leakage-in-Federated-Learning-from-Representation-Perspective
 Official implementation of "Provable Defense against Privacy Leakage in Federated Learning from Representation Perspective"
 
 The paper can be found at https://arxiv.org/pdf/2012.06043.pdf
