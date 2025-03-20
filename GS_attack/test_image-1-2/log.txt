@@ -1,0 +1,68 @@
+# Not Spteria
+
+Currently evaluating -------------------------------:
+Thursday, 20. March 2025 05:27PM
+CPUs: 16, GPUs: 1 on edgehyeju.
+Namespace(model='ConvNet', dataset='CIFAR10', dtype='float', trained_model=False, epochs=120, accumulation=0, num_images=1, target_id=-1, label_flip=False, restarts=1, cost_fn='sim', indices='def', weights='equal', optimizer='adam', signed=True, boxed=True, scoring_choice='loss', init='randn', tv=0.0001, save_image=True, image_path='test_image-1-2', model_path='models/', data_path='~/data', name='iv', deterministic=False, dryrun=False, defense='ours', pruning_rate=60.0)
+GPU : NVIDIA GeForce RTX 4090
+Files already downloaded and verified
+Files already downloaded and verified
+Model initialized with random key 2156240468.
+ground_truth.shape: torch.Size([1, 3, 32, 32])
+It: 0. Rec. loss: 0.0073.
+It: 500. Rec. loss: 0.0028.
+It: 1000. Rec. loss: 0.0036.
+It: 1500. Rec. loss: 0.0038.
+It: 2000. Rec. loss: 0.0027.
+It: 2500. Rec. loss: 0.0031.
+It: 3000. Rec. loss: 0.0031.
+It: 3500. Rec. loss: 0.0033.
+It: 4000. Rec. loss: 0.0038.
+It: 4500. Rec. loss: 0.0036.
+It: 5000. Rec. loss: 0.0040.
+It: 5500. Rec. loss: 0.0032.
+It: 6000. Rec. loss: 0.0029.
+It: 6500. Rec. loss: 0.0035.
+It: 7000. Rec. loss: 0.0034.
+It: 7500. Rec. loss: 0.0031.
+It: 8000. Rec. loss: 0.0026.
+It: 8500. Rec. loss: 0.0035.
+It: 9000. Rec. loss: 0.0037.
+It: 9500. Rec. loss: 0.0034.
+It: 10000. Rec. loss: 0.0040.
+It: 10500. Rec. loss: 0.0032.
+It: 11000. Rec. loss: 0.0033.
+It: 11500. Rec. loss: 0.0031.
+It: 12000. Rec. loss: 0.0036.
+It: 12500. Rec. loss: 0.0029.
+It: 13000. Rec. loss: 0.0030.
+It: 13500. Rec. loss: 0.0033.
+It: 14000. Rec. loss: 0.0030.
+It: 14500. Rec. loss: 0.0029.
+It: 15000. Rec. loss: 0.0032.
+It: 15500. Rec. loss: 0.0033.
+It: 16000. Rec. loss: 0.0032.
+It: 16500. Rec. loss: 0.0030.
+It: 17000. Rec. loss: 0.0032.
+It: 17500. Rec. loss: 0.0025.
+It: 18000. Rec. loss: 0.0029.
+It: 18500. Rec. loss: 0.0026.
+It: 19000. Rec. loss: 0.0025.
+It: 19500. Rec. loss: 0.0027.
+It: 20000. Rec. loss: 0.0031.
+It: 20500. Rec. loss: 0.0035.
+It: 21000. Rec. loss: 0.0037.
+It: 21500. Rec. loss: 0.0032.
+It: 22000. Rec. loss: 0.0036.
+It: 22500. Rec. loss: 0.0035.
+It: 23000. Rec. loss: 0.0035.
+It: 23500. Rec. loss: 0.0035.
+It: 23999. Rec. loss: 0.0036.
+Choosing optimal result ...
+Optimal result score: 0.0036
+Total time: 136.7022364139557.
+Rec. loss: 0.0036 | MSE: 0.0801 | PSNR: 22.98 | FMSE: 2.2458e-09 |
+Thursday, 20. March 2025 05:29PM
+---------------------------------------------------
+Finished computations with time: 0:02:17.782595
+-------------Job finished.-------------------------
