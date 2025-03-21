@@ -1,0 +1,23 @@
+# first ssim test (no seteria)
+
+Currently evaluating -------------------------------:
+Friday, 21. March 2025 10:26AM
+CPUs: 16, GPUs: 1 on edgehyeju.
+Namespace(model='ConvNet', dataset='CIFAR10', dtype='float', trained_model=False, epochs=120, accumulation=0, num_images=1, target_id=-1, label_flip=False, restarts=1, cost_fn='sim', indices='def', weights='equal', optimizer='adam', signed=True, boxed=True, scoring_choice='loss', init='randn', tv=0.0001, save_image=True, image_path='test_image4', model_path='models/', data_path='~/data', name='iv', deterministic=False, dryrun=False, defense='ours', pruning_rate=60.0)
+GPU : NVIDIA GeForce RTX 4090
+Files already downloaded and verified
+Files already downloaded and verified
+Model initialized with random key 3738736252.
+ground_truth.shape: torch.Size([1, 3, 32, 32])
+Full gradient norm is 4.839251e-02.
+It: 0. Rec. loss: 0.0086.
+It: 500. Rec. loss: 0.0028.
+It: 999. Rec. loss: 0.0018.
+Choosing optimal result ...
+Optimal result score: 0.0023
+Total time: 5.877986907958984.
+Rec. loss: 0.0023 | MSE: 0.0266 | PSNR: 27.77 | SSIM: 0.0009 | FMSE: 1.3333e-09 |
+Friday, 21. March 2025 10:27AM
+---------------------------------------------------
+Finished computations with time: 0:00:07.000438
+-------------Job finished.-------------------------
