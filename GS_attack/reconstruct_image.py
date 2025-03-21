@@ -105,20 +105,30 @@ if __name__ == "__main__":
     # ================ Method ===============
     if args.model in ["LeNet", "ConvNet"] and args.defense == "ours":
         print("applying our defense strategy...")
-        feature_fc1_graph = model.extract_feature()
+        feature_fc1_graph = model.extract_feature()  # [1, 2304]
         deviation_f1_target = torch.zeros_like(feature_fc1_graph)
         deviation_f1_x_norm = torch.zeros_like(feature_fc1_graph)
-        for f in range(deviation_f1_x_norm.size(1)):
+        for f in range(deviation_f1_x_norm.size(1)):  # [1, 2304]
             deviation_f1_target[:, f] = 1
+            if f % 500 == 0:
+                print("(1)feature_fc1_graph[0][0]", feature_fc1_graph[0][0])
+
             feature_fc1_graph.backward(deviation_f1_target, retain_graph=True)
-            deviation_f1_x = ground_truth.grad.data
+            if f % 500 == 0:
+                print("(2)feature_fc1_graph[0][0]", feature_fc1_graph[0][0])
+
+            deviation_f1_x = ground_truth.grad.data  # [1,3,32,32]
+            if f % 500 == 0:
+                print("deviation_f1_x.shape", deviation_f1_x.shape)
             deviation_f1_x_norm[:, f] = torch.norm(
                 deviation_f1_x.view(deviation_f1_x.size(0), -1), dim=1
             ) / (feature_fc1_graph.data[:, f] + 0.1)
+
             model.zero_grad()
             ground_truth.grad.data.zero_()
             deviation_f1_target[:, f] = 0
-        deviation_f1_x_norm_sum = deviation_f1_x_norm.sum(axis=0)
+        deviation_f1_x_norm_sum = deviation_f1_x_norm.sum(axis=0)  # [2304]
+        print("deviation_f1_x_norm_sum.shape", deviation_f1_x_norm_sum.shape)
         thresh = np.percentile(
             deviation_f1_x_norm_sum.flatten().cpu().numpy(), args.pruning_rate
         )
@@ -156,7 +166,7 @@ if __name__ == "__main__":
         lr=0.1,
         optim=args.optimizer,
         restarts=args.restarts,
-        max_iterations=24_000,
+        max_iterations=2_000,  # 24_000,
         total_variation=args.tv,
         init="randn",
         filter="none",
