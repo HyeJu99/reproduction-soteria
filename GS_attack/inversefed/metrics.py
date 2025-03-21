@@ -75,21 +75,10 @@ def ssim(img_batch, ref_batch, batched=False):
     """
 
     def get_ssim(img_in, img_ref):
-        from pytorch_msssim import SSIM
+        from pytorch_msssim import ssim
 
         # RGB (0~255)
-        return SSIM(img_in, img_ref, data_range=255, size_average=True)  # lower
-
-    """if batched:
-        ssim_loss = 1 - get_ssim(img_batch.detach(), ref_batch)
-        ssim = ssim_loss
-    else:
-        [B, C, m, n] = img_batch.shape
-        ssims = []
-        for sample in range(B):
-            ssim_loss = 1 - get_ssim(img_batch.detach(), ref_batch)
-            ssims.append(ssim_loss)
-        ssim = torch.stack(ssims, dim=0).mean()"""
+        return ssim(img_in, img_ref, data_range=255, size_average=True)  # lower
 
     return get_ssim(img_batch, ref_batch)  # lower
 

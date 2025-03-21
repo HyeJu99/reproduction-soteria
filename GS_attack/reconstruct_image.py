@@ -156,7 +156,7 @@ if __name__ == "__main__":
         lr=0.1,
         optim=args.optimizer,
         restarts=args.restarts,
-        max_iterations=500,  # 24_000,
+        max_iterations=24_000,
         total_variation=args.tv,
         init="randn",
         filter="none",
@@ -171,10 +171,10 @@ if __name__ == "__main__":
     )
 
     # Compute stats
-    test_mse = (output - ground_truth).pow(2).mean().item()
-    feat_mse = (model(output) - model(ground_truth)).pow(2).mean().item()  # higher
-    test_psnr = inversefed.metrics.psnr(output, ground_truth, factor=1 / ds)
+    test_mse = (output - ground_truth).pow(2).mean().item()  # higher
+    test_psnr = inversefed.metrics.psnr(output, ground_truth, factor=1 / ds)  # higher
     test_ssim = inversefed.metrics.ssim(output, ground_truth)  # higher
+    feat_mse = (model(output) - model(ground_truth)).pow(2).mean().item()  # lower
 
     # Save the resulting image
     if args.save_image and not args.dryrun:
